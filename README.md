@@ -1,0 +1,1 @@
+This is a project to create an Etch-a-Sketch or sketchpad like web interface for The Odin Project.
