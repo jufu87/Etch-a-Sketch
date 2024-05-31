@@ -3,10 +3,13 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 body {
-    background-color: lightblue;
+    background-color: #424874;
 }
 
 .outer-container {
@@ -20,6 +23,12 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    color: #DCD6F7;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #DCD6F7;
 }
 
 #btn-newgrid, #btn-clear {
@@ -31,7 +40,10 @@ h1 {
    flex-direction: column;
    height: 80vh;
    width: 80vh;
-   border: 1px solid black;
+   border: 3px solid #424874;
+   box-shadow: 5px 5px 15px 5px #646ba0;
+   background-color: #A6B1E1;
+   border-radius: 5px;
 }
 
 .divRows {
@@ -43,5 +55,29 @@ h1 {
 .divColumns {
     height: 100%;
     width: 100%;
-    /* opacity: 0; */
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #424874;
+    background-color: #F4EEFF;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+button:hover {
+    background-color: #A6B1E1;
+    color: #DCD6F7;
+}
+
+button:active {
+    background-color: #A6B1E1;
+    color: #DCD6F7;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
