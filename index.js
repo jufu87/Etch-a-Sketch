@@ -1,4 +1,5 @@
 const container = document.querySelector("#container");
+const btn = document.querySelector("#btn");
 let selection = 16;
 let divRows = undefined;
 let divColumns = undefined;
