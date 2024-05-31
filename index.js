@@ -1,8 +1,27 @@
 const container = document.querySelector("#container");
-const btn = document.querySelector("#btn");
+const btnNewGrid = document.querySelector("#btn-newgrid");
+const btnClear = document.querySelector("#btn-clear");
 let selection = 16;
-// let divRows = undefined;
-// let divColumns = undefined;
+createDivs(selection);
+
+btnNewGrid.addEventListener('click', () => {
+    document.querySelectorAll(".divRows").forEach(e => e.remove());
+    selection = parseInt(prompt("How many squares per side?"));
+    if (isNaN(selection)) {
+        alert("Numbers only. Set to default 16!")
+        selection = 16;
+    }
+    if (selection > 100) {
+        alert("Set to maximum of 100!")
+        selection = 100;
+    }
+    createDivs(selection);
+});
+
+btnClear.addEventListener('click', () => {
+    document.querySelectorAll(".divRows").forEach(e => e.remove());
+    createDivs(selection);
+});
 
 function createDivs (numOfDivs) {
    
@@ -20,39 +39,5 @@ function createDivs (numOfDivs) {
                 console.log("event triggered")
             });
         };
-    };
-    // function mouseOver() {
-    //     console.log("event triggered");
-    // };
-    
-    // divColumns.addEventListener('mouseover', mouseOver);
+    };   
 }
-
-createDivs(selection);
-
-
-
-
-
-
-
-
-
-
-// function makeGrids(size) {
-//     let screen = document.querySelector("#container");
-//     for (let i = 0; i < size; i++) {
-//       let column = document.createElement("div");
-//       column.classList.add("column");
-//       for (let j = 1; j <= size; j++) {
-//         let row = document.createElement("div");
-//         row.classList.add("row");
-//         row.style.border = "2px solid black";
-//         row.innerText = (i * size) + j;
-//         column.appendChild(row);
-//       }
-//       screen.appendChild(column);
-//     }
-//   }
-  
-//   makeGrids(16);
