@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+body {
+    background-color: lightblue;
+}
+
 .outer-container {
     display: flex;
     flex-direction: column;
@@ -14,7 +18,11 @@
     width: 100vw;
 }
 
-#btn {
+h1 {
+    margin-bottom: 20px;
+}
+
+#btn-newgrid, #btn-clear {
     margin-bottom: 20px;
 }
 
@@ -24,7 +32,6 @@
    height: 80vh;
    width: 80vh;
    border: 1px solid black;
-  
 }
 
 .divRows {
@@ -34,12 +41,7 @@
 }
 
 .divColumns {
-    /* border: 1px solid black; */
     height: 100%;
     width: 100%;
+    /* opacity: 0; */
 }
-
-/* .divColumns:hover {
-    background-color: grey;
-    
-} */

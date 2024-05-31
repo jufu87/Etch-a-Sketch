@@ -1,20 +1,24 @@
 const container = document.querySelector("#container");
 const btnNewGrid = document.querySelector("#btn-newgrid");
 const btnClear = document.querySelector("#btn-clear");
-let selection = 16;
+const gridDimensions = document.querySelector("#gridDimensions");
+let selection = 32;
 createDivs(selection);
 
 btnNewGrid.addEventListener('click', () => {
     document.querySelectorAll(".divRows").forEach(e => e.remove());
     selection = parseInt(prompt("How many squares per side?"));
+
     if (isNaN(selection)) {
-        alert("Numbers only. Set to default 16!")
-        selection = 16;
+        alert("Numbers only!")
+        return;
     }
     if (selection > 100) {
         alert("Set to maximum of 100!")
         selection = 100;
     }
+
+    gridDimensions.textContent = selection + " X " + selection;
     createDivs(selection);
 });
 
@@ -35,9 +39,31 @@ function createDivs (numOfDivs) {
             divColumns.classList.add('divColumns');
             divRows.appendChild(divColumns);
             divColumns.addEventListener("mouseover", () => {
-                divColumns.style.backgroundColor = "black";
+                divColumns.style.backgroundColor = generateNewColor();
+                // divColumns.style.opacity += "0.1";
                 console.log("event triggered")
+               
             });
         };
     };   
+};
+
+
+// this section is to generate random colors which will then be called during the mouseover
+const hexCharacters = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+function getCharacter(index) {
+    return hexCharacters[index];
 }
+
+function generateNewColor(){
+    let hexColorRep = "#";
+    for (let k = 0; k < 6; k++){
+        const randomPosition = Math.floor(Math.random() * hexCharacters.length);
+        hexColorRep += getCharacter(randomPosition);
+    }
+    return hexColorRep;
+}
+
+
+
+gridDimensions.textContent = selection + " X " + selection;
