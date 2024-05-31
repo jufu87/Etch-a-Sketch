@@ -1,26 +1,43 @@
 const container = document.querySelector("#container");
 const btn = document.querySelector("#btn");
 let selection = 16;
-let divRows = undefined;
-let divColumns = undefined;
+// let divRows = undefined;
+// let divColumns = undefined;
 
 function createDivs (numOfDivs) {
    
     for (let i = 1; i <= numOfDivs; i++) { 
-        divRows = document.createElement("div");
+        const divRows = document.createElement("div");
         divRows.classList.add('divRows');
         container.appendChild(divRows);
         
         for (let j = 1; j <= numOfDivs; j++) { 
-            divColumns = document.createElement("div");
+            const divColumns = document.createElement("div");
             divColumns.classList.add('divColumns');
             divRows.appendChild(divColumns);
-            };
+            divColumns.addEventListener("mouseover", () => {
+                divColumns.style.backgroundColor = "black";
+                console.log("event triggered")
+            });
         };
-    return;
+    };
+    // function mouseOver() {
+    //     console.log("event triggered");
+    // };
+    
+    // divColumns.addEventListener('mouseover', mouseOver);
 }
 
 createDivs(selection);
+
+
+
+
+
+
+
+
+
 
 // function makeGrids(size) {
 //     let screen = document.querySelector("#container");
